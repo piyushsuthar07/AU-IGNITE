@@ -61,13 +61,8 @@ Branches must remain separate — **no cross-branch modifications**.
 
 ---
 
+
 ## 🚀 How to Submit Your Assignment
-
-### 1️⃣ Clone the repository
-```bash
-git clone <repo-url>
-cd <repo-folder>
-
 ## 🔀 Git Branch Workflow Diagram
 
 ```mermaid
@@ -100,4 +95,9 @@ flowchart TD
 
     style J fill:#c6ffb3,stroke:#000
     style K fill:#c6ffb3,stroke:#000
+```
+### 1️⃣ Clone the repository
+```bash
+git clone <repo-url>
+cd <repo-folder>
 
