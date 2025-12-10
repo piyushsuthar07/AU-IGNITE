@@ -67,3 +67,37 @@ Branches must remain separate — **no cross-branch modifications**.
 ```bash
 git clone <repo-url>
 cd <repo-folder>
+
+## 🔀 Git Branch Workflow Diagram
+
+```mermaid
+flowchart TD
+
+    A[Admin Creates Repo] --> B[Admin Creates Member Branches]
+    B --> C[Admin Publishes Task Files in main]
+
+    C --> D[Member Clones Repository]
+    D --> E[Member Fetches All Branches]
+    E --> F[Member Switches to Own Branch]
+
+    F --> G[Member Completes Assignment in Own Branch]
+    G --> H[Member Adds & Commits Code]
+    H --> I[Member Pushes Code to Their Branch]
+
+    I --> J[Admin Reviews Work in Each Member Branch]
+    J --> K[Admin Updates main When Needed]
+
+    style A fill:#ffd280,stroke:#000
+    style B fill:#ffd280,stroke:#000
+    style C fill:#ffd280,stroke:#000
+
+    style D fill:#b3e6ff,stroke:#000
+    style E fill:#b3e6ff,stroke:#000
+    style F fill:#b3e6ff,stroke:#000
+    style G fill:#b3e6ff,stroke:#000
+    style H fill:#b3e6ff,stroke:#000
+    style I fill:#b3e6ff,stroke:#000
+
+    style J fill:#c6ffb3,stroke:#000
+    style K fill:#c6ffb3,stroke:#000
+
