@@ -30,7 +30,7 @@ class Bank:
         
 
         if any(acc['name'].lower() == name.lower() for acc in self.accounts):
-            print("⚠️ An account with this name already exists. Please choose a different name.")
+            print(" An account with this name already exists. Please choose a different name.")
             return
 
         while True:
@@ -59,7 +59,7 @@ class Bank:
         
        
         self.accounts.append(new_account)
-        print(f"\n✅ Account created successfully for {name}! Initial balance: ${initial_balance:.2f}")
+        print(f"\n Account created successfully for {name}! Initial balance: ${initial_balance:.2f}")
 
     def access_account(self):
         print("\n--- Account Login ---")
@@ -70,11 +70,11 @@ class Bank:
         account = next((acc for acc in self.accounts if acc['name'].lower() == name.lower()), None)
         
         if account and account['pin'] == pin:
-            print(f"\n✅ Welcome back, {account['name']}!")
+            print(f"\n Welcome back, {account['name']}!")
             
             self.account_actions_menu(account)
         else:
-            print("❌ Invalid name or PIN.")
+            print(" Invalid name or PIN.")
 
     def account_actions_menu(self, account):
         while True:
@@ -99,7 +99,7 @@ class Bank:
                 print("Invalid option. Please try again.")
 
     def check_balance(self, account):
-        print(f"\n💰 Current Balance for {account['name']}: ${account['balance']:.2f}")
+        print(f"\n Current Balance for {account['name']}: ${account['balance']:.2f}")
 
     def deposit(self, account):
         while True:
@@ -107,7 +107,7 @@ class Bank:
                 amount = float(input("Enter amount to deposit: "))
                 if amount > 0:
                     account['balance'] += amount
-                    print(f"✅ Deposit successful. New Balance: ${account['balance']:.2f}")
+                    print(f" Deposit successful. New Balance: ${account['balance']:.2f}")
                     break
                 else:
                     print("Deposit amount must be positive.")
@@ -120,7 +120,7 @@ class Bank:
         pin_check = input("Re-enter your PIN to authorize withdrawal: ")
         
         if account['pin'] != pin_check:
-            print("❌ Wrong PIN. Withdrawal cancelled.")
+            print(" Wrong PIN. Withdrawal cancelled.")
             return
 
         while True:
@@ -132,11 +132,11 @@ class Bank:
                 
                 if account['balance'] >= amount:
                     account['balance'] -= amount
-                    print("✅ Withdrawal successful.")
+                    print(" Withdrawal successful.")
                     print(f"Remaining Balance: ${account['balance']:.2f}")
                     break
                 else:
-                    print("❌ Insufficient balance.")
+                    print(" Insufficient balance.")
                     break
             except ValueError:
                 print("Invalid input. Please enter a valid number.")
